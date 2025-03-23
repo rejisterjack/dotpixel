@@ -86,7 +86,8 @@ app.post("/api/photos", async (req, res) => {
     })
   }
 
-  await db.photo.create({ imageUrl, description, altDescription, userId })
+  const photo = await db.photo.create({ imageUrl, description, altDescription, userId })
+
   res.status(201).json({ message: "Photo saved successfully" })
 })
 
