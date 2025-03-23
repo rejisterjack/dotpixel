@@ -88,6 +88,11 @@ app.post("/api/photos", async (req, res) => {
 
   const photo = await db.photo.create({ imageUrl, description, altDescription, userId })
 
+  if (tags && tags.length > 0) {
+    const tagInstances = tags.map((tag) => ({ name: tag, photoId: photo.id }));
+    await db.tag.bulkCreate(tagInstances);
+  }
+
   res.status(201).json({ message: "Photo saved successfully" })
 })
 
