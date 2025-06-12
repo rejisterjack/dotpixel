@@ -38,5 +38,5 @@
 
 ### 1. Clone the Repository  
 ```bash
-git clone https://github.com/yourusername/dotpixel.git 
+git clone https://github.com/rejisterjack/dotpixel.git 
 cd dotpixel
